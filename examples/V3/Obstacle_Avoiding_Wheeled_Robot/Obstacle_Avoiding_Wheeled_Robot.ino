@@ -2,6 +2,8 @@
 // demonstrate how this sensor can help a 2WD car avoid obstacles.
 #include <SnappyXOShield.h>
 
+SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
+
 // Pin Definitions
 int trig = 13;
 int echo = 12;
@@ -11,7 +13,7 @@ long duration, inches, cm;
 int randint;
 
 void setup() {
-	initMotors();
+	shield.begin();
 
 	pinMode(trig, OUTPUT);
 	pinMode(echo, INPUT);
@@ -42,7 +44,7 @@ void loop() {
 	delay(10);
 
 	// Commands robot to drive forward
-	forward();
+	shield.forward();
 
 	// randomly choose whether to turn left or right if an obstacle is
 	// encountered; in this case, 0 is turning right and 1 is turning left
@@ -51,25 +53,25 @@ void loop() {
 	// When robot becomes to close to the obstacle; Robot will reverse, turn
 	// right, then continue forward
 	if (inches < 7 && randint == 0) {
-		reverse();
+		shield.reverse();
 		delay(500);
-		pause();
+		shield.stop();
 		delay(500);
-		turnRight();
+		shield.spinRight();
 		delay(200);
-		forward();
+		shield.forward();
 	}
 
 	// When robot becomes to close to the obstacle; Robot will reverse, turn
 	// left, then continue forward
 	if (inches < 7 && randint == 1) {
-		reverse();
+		shield.reverse();
 		delay(500);
-		pause();
+		shield.stop();
 		delay(500);
-		turnLeft();
+		shield.spinLeft();
 		delay(200);
-		forward();
+		shield.forward();
 	}
 }
 

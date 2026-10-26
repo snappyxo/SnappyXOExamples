@@ -2,6 +2,8 @@
 // motion needed to create a robot dog
 #include <SnappyXOShield.h>
 
+SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
+
 // Pin Definitions
 const int trig = A0;
 const int echo = A1;
@@ -18,7 +20,8 @@ void setup() {
 	}
 	pinMode(echo, INPUT);
 
-	initMotors(true, false);
+	shield.begin();
+	shield.invertLeft();
 }
 
 void loop() {
@@ -35,10 +38,10 @@ void loop() {
 	distance = microsecondsToInches(duration);
 
 	if (distance > 3) {
-		forward(255);
+		shield.forward(255);
 	} else {
 		Serial.println("Object Detected");
-		pause();
+		shield.stop();
 		delay(200);
 	}
 }

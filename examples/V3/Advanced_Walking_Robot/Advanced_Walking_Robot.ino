@@ -2,8 +2,10 @@
 // motion needed to create a walking robot
 #include <SnappyXOShield.h>
 
+SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
+
 // This setup section will be executed once
-void setup() { initMotors(); }
+void setup() { shield.begin(); }
 
 // This is the main loop the code will follow
-void loop() { forward(); }
+void loop() { shield.forward(); }

@@ -1,0 +1,29 @@
+name: Compile Examples
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    name: Compile for UNO R4 WiFi
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile examples
+        uses: arduino/compile-sketches@v1
+        with:
+          fqbn: arduino:renesas_uno:unor4wifi
+          platforms: |
+            - name: arduino:renesas_uno
+          # SnappyXOShield comes from its repository's main branch until 1.0.0
+          # is in the Library Manager; then it can be "- name: SnappyXOShield"
+          libraries: |
+            - source-url: https://github.com/snappyxo/SnappyXOShield.git
+            - name: MicroBlue
+            - name: ArduinoBLE
+            - name: Servo
+            - name: IRremote
+          sketch-paths: |
+            - examples
+          verbose: false

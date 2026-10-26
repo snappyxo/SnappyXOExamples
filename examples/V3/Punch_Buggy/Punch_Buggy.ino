@@ -5,6 +5,8 @@
 #include <Servo.h>
 #include <SnappyXOShield.h>
 
+SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
+
 // Pin Declarations
 
 const int trig = 13;
@@ -16,19 +18,19 @@ Servo armTOP;
 Servo armBOTTOM;
 
 // Function to stop motor movement
-void PAUSE() { pause(); }
+void PAUSE() { shield.stop(); }
 
 // Function to move forward
-void FORWARD() { forward(); }
+void FORWARD() { shield.forward(); }
 
 // Function to move in reverse
-void REVERSE() { reverse(); }
+void REVERSE() { shield.reverse(); }
 
 // Function to turn left
-void TURN_LEFT() { turnLeft(); }
+void TURN_LEFT() { shield.spinLeft(); }
 
 // Function to turn right
-void TURN_RIGHT() { turnRight(); }
+void TURN_RIGHT() { shield.spinRight(); }
 
 // Functions to convert ultrasonic readings to distance
 long microsecondsToInches(long microseconds) { return microseconds / 74 / 2; }
@@ -46,8 +48,9 @@ void setup() {
 	armTOP.write(179);
 	armBOTTOM.write(0);
 
-	// Initialize motors (invertL=true to match original wiring polarity)
-	initMotors(true, false);
+	shield.begin();
+	// This robot's left motor runs backward unless it's reversed here
+	shield.invertLeft();
 }
 
 void loop() {

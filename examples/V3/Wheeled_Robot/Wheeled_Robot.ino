@@ -2,9 +2,11 @@
 // car and program it through Arduino.
 #include <SnappyXOShield.h>
 
+SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
+
 void setup() {
 	// Initialize motors
-	initMotors();
+	shield.begin();
 
 	// Begin serial communication
 	Serial.begin(9600);
@@ -13,15 +15,15 @@ void setup() {
 // This is the main loop the code will follow
 void loop() {
 	Serial.println("Forward");
-	forward();
+	shield.forward();
 	delay(1000);
 	Serial.println("Turn Right");
-	turnRight();
+	shield.spinRight();
 	delay(1000);
 	Serial.println("Turn Left");
-	turnLeft();
+	shield.spinLeft();
 	delay(1000);
 	Serial.println("Reverse");
-	reverse();
+	shield.reverse();
 	delay(1000);
 }

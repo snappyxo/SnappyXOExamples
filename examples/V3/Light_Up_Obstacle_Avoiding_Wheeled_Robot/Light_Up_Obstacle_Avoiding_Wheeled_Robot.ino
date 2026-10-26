@@ -3,6 +3,8 @@
 // the car is moving
 #include <SnappyXOShield.h>
 
+SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
+
 // Pin Definitions
 int PIN_LED_RED = 10;
 int PIN_LED_BLUE = 11;
@@ -15,7 +17,7 @@ long duration, inches, cm;
 int randint;
 
 void setup() {
-	initMotors();
+	shield.begin();
 
 	// Declare pinModes
 	pinMode(PIN_LED_GREEN, OUTPUT);
@@ -55,7 +57,7 @@ void loop() {
 	delay(10);
 
 	// Commands robot to drive forward and lights up the LED to be green
-	forward();
+	shield.forward();
 	green();
 	randint = random(0, 2);	 // // randomly choose whether to turn left or right
 							 // if an obstacle is encountered; in this code, 0
@@ -64,32 +66,32 @@ void loop() {
 	// When robot becomes to close to the obstacle; Robot will reverse, turn
 	// right, then continue forward
 	if (inches < 7 && randint == 0) {
-		reverse();
+		shield.reverse();
 		red();	// turns led to be red
 		delay(500);
-		pause();
+		shield.stop();
 		red();
 		delay(500);
-		turnRight();
+		shield.spinRight();
 		blue();
 		delay(300);
-		forward();
+		shield.forward();
 		green();
 	}
 
 	// When robot becomes to close to the obstacle; Robot will reverse, turn
 	// left, then continue forward
 	if (inches < 7 && randint == 1) {
-		reverse();
+		shield.reverse();
 		red();	// turns led to be red
 		delay(500);
-		pause();
+		shield.stop();
 		red();
 		delay(500);
-		turnLeft();
+		shield.spinLeft();
 		blue();
 		delay(300);
-		forward();
+		shield.forward();
 		green();
 	}
 }

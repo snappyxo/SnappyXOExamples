@@ -2,6 +2,8 @@
 // different heights to drive a robot foward and backward
 #include <SnappyXOShield.h>
 
+SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
+
 // Pin Declarations
 
 int trig = 13;	// attach pin 7 to Trig
@@ -11,9 +13,9 @@ void setup() {
 	// initialize serial communication:
 	Serial.begin(9600);
 
-	// invertR=true matches original forward direction (InputOne HIGH, InputTwo
-	// LOW)
-	initMotors(false, true, false);
+	shield.begin();
+	// This robot's right motor runs backward unless it's reversed here
+	shield.invertRight();
 	pinMode(trig, OUTPUT);
 	pinMode(echo, INPUT);
 }
@@ -51,17 +53,17 @@ void loop() {
 
 		if (cm < 15) {
 			Serial.println("Reverse");
-			reverse();
+			shield.reverse();
 		}
 
 		else if (cm < 30 && cm > 16) {
 			Serial.println("Forward.");
-			forward();
+			shield.forward();
 		}
 
 		else {
 			Serial.println("Pause");
-			pause();
+			shield.stop();
 		}
 	}
 }

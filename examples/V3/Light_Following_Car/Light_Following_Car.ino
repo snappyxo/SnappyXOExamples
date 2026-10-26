@@ -2,6 +2,8 @@
 // greatest light.
 #include <SnappyXOShield.h>
 
+SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
+
 // Pin Definitions
 int photoLeft = A1;
 int photoRight = A0;
@@ -23,7 +25,8 @@ void setup() {
 	Serial.begin(9600);
 
 	// Inital motor settings
-	initMotors(false, true);
+	shield.begin();
+	shield.invertRight();
 }
 
 void loop() {
@@ -37,10 +40,10 @@ void loop() {
 	Serial.println(V_Right);
 
 	if (V_Left > V_Right && lightDifference > minLightDiff) {
-		turnLeft();
+		shield.spinLeft();
 	} else if (V_Left < V_Right && lightDifference > minLightDiff) {
-		turnRight();
+		shield.spinRight();
 	} else {
-		forward();
+		shield.forward();
 	}
 }
