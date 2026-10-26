@@ -1,5 +1,10 @@
 // This project aims to educate the user on how to control a 2WD car using IR as
-// well as operating a passive ball dropping mechanism. Include libraries
+// well as operating a passive ball dropping mechanism.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
+
+// Include libraries
 #include <IRremote.hpp>
 #include <SnappyXOShield.h>
 

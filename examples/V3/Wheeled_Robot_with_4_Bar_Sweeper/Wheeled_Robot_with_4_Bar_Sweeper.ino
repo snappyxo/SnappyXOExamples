@@ -1,6 +1,9 @@
 // This project aims to educate the user on how to control a differential drive
 // robot with two DC motors and induce a sweeping motion with a 4 bar mechanism
 // and finite servo.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <MicroBlue.h>
 #include <Servo.h>
 #include <SnappyXOShield.h>

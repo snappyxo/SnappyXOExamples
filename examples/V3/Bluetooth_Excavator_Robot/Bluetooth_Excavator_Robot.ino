@@ -1,5 +1,8 @@
 // This project aims to educate the user on how to control a 2WD car using
 // bluetooth as well as an excavator mechanism using finite servos.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <MicroBlue.h>
 #include <Servo.h>
 #include <SnappyXOShield.h>

@@ -1,5 +1,10 @@
 // This code controls a car with a steering mechanism via IR Remote. You can
-// control the speed and steer angle of the car. Include libraries
+// control the speed and steer angle of the car.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
+
+// Include libraries
 #include <IRremote.hpp>
 #include <Servo.h>
 #include <SnappyXOShield.h>

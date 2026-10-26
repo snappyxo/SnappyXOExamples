@@ -2,6 +2,10 @@
 // sensor avialable in the Advanced Robotics SnappyXO kit. When a key is pressed
 // on the piano, a paddle blocks the ultrasonic sensor. Then, according to the
 // distance that paddle is away from the sensor, a tone is played with a buzzer.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
+
 // Pin Definitions
 #define trigger 9
 #define echo 10

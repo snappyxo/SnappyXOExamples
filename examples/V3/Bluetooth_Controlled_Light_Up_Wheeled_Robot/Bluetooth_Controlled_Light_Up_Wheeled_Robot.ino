@@ -3,6 +3,9 @@
 // and the MicroBlue app. The LED shows what the robot is doing: green driving
 // forward, red stopped or backward, blue spinning in place, and blinking red
 // while the phone isn't connected.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <MicroBlue.h>
 #include <SnappyXOShield.h>
 

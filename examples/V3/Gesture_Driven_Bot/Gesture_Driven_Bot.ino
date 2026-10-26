@@ -1,5 +1,8 @@
 // This project aims to educate the user on how an ultrasonic sensor can detect
 // different heights to drive a robot foward and backward
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <SnappyXOShield.h>
 
 SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2

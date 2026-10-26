@@ -1,5 +1,10 @@
 // This project aims to educate the user on how two servos can pick up and move
-// a foam ball Include Libraries
+// a foam ball.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
+
+// Include Libraries
 #include <Servo.h>
 #include <SnappyXOShield.h>
 

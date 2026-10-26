@@ -1,5 +1,8 @@
 // This project aims to educate the user on how connect an Ultrasonic sensor and
 // demonstrate how this sensor can help a 2WD car avoid obstacles.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <SnappyXOShield.h>
 
 SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2

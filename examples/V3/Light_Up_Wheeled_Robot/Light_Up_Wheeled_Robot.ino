@@ -1,4 +1,7 @@
 // This code lights up two LEDs while a two wheel drive robot car moves.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <SnappyXOShield.h>
 
 SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2

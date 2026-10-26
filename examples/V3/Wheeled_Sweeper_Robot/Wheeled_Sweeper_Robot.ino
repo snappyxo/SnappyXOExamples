@@ -1,6 +1,9 @@
 // This project aims to educate the user on how to control a differential drive
 // robot with two motors using the UNO R4 WiFi's built-in Bluetooth and the
 // MicroBlue app.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <MicroBlue.h>
 #include <SnappyXOShield.h>
 

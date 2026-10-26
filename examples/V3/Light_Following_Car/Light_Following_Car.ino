@@ -1,5 +1,8 @@
 // This project uses the photoresistor to steer a car in the direction of
 // greatest light.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <SnappyXOShield.h>
 
 SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2

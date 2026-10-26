@@ -1,5 +1,8 @@
 // This project aims to educate the user on how to connect the motors of a 2WD
 // car and program it through Arduino.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <SnappyXOShield.h>
 
 SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2

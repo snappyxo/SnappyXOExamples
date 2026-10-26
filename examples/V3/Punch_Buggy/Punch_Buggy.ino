@@ -1,7 +1,10 @@
 // This project aims to educate the user on how to control a 2WD car using an
 // Ultrasonic Sensor as well as an "punching" mechanism using finite servos.
-// Include libraries
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 
+// Include libraries
 #include <Servo.h>
 #include <SnappyXOShield.h>
 

@@ -1,5 +1,8 @@
 // This code controls a car with a steering mechanism via bluetooth. You can
 // control the speed and steer angle of the car.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <MicroBlue.h>
 #include <Servo.h>
 #include <SnappyXOShield.h>

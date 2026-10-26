@@ -53,3 +53,7 @@ Available V3 examples:
 - [Wheeled_Robot_with_4_Bar_Lift](examples/V3/Wheeled_Robot_with_4_Bar_Lift/Wheeled_Robot_with_4_Bar_Lift.ino)
 - [Wheeled_Robot_with_4_Bar_Sweeper](examples/V3/Wheeled_Robot_with_4_Bar_Sweeper/Wheeled_Robot_with_4_Bar_Sweeper.ino)
 - [Wheeled_Sweeper_Robot](examples/V3/Wheeled_Sweeper_Robot/Wheeled_Sweeper_Robot.ino)
+
+## License
+
+MIT License — Copyright (c) 2024-2026 A+ Mobile Solutions Inc. See [LICENSE](LICENSE) for details.

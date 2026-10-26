@@ -1,6 +1,9 @@
 // Shape-Drawing Encoder Bot: this project aims to create a dual-motor driven
 // wheeled robot that uses the encoders to gauge the robot's distance, allowing
 // shape paths to be defined.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <SnappyXOShield.h>
 
 SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2

@@ -1,6 +1,9 @@
 // This code allows the 2WD DC motor car to avoid obstacles using an Ultrsonic
 // sensor and lights up an LED that changes color based on the direction that
 // the car is moving
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <SnappyXOShield.h>
 
 SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2

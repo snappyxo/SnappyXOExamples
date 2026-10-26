@@ -16,5 +16,7 @@
 - Fixed: `Ram_Mobile` printed "Left" when turning right and "Turn Right" when turning left.
 - IR sketches include `IRremote.hpp` (two used the old `IRremote.h`, which prints "no longer supported" warnings) and call `IrReceiver.resume()` after each button (two called `start()`).
 - `library.properties`: maintainer A+ Mobile Solutions Inc, and `depends` now lists minimum versions and Servo and IRremote, so the Library Manager installs everything the sketches need.
-- README: what the sketches need, and how to upgrade from 3.0.0.
+- README: what the sketches need, how to upgrade from 3.0.0, and the license.
+- License: still MIT, now with A+ Mobile Solutions Inc as the copyright holder, like MicroBlue. Every sketch says so at the top.
+- `keywords.txt`: replaced the empty template with a note that the keywords come from SnappyXOShield and MicroBlue.
 - CI compiles every sketch for the UNO R4 WiFi.

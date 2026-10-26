@@ -1,6 +1,9 @@
 // This project aims to educate the user on how to use the UNO R4 WiFi's
 // built-in Bluetooth to control a 2WD car and toggle a 4 bar linkage that
 // performs a lifting motion.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <MicroBlue.h>
 #include <Servo.h>
 #include <SnappyXOShield.h>

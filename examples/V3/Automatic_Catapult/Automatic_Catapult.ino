@@ -1,5 +1,10 @@
 // This project aims to educate the user on how two photocells and two servos
-// can automatically launch a foam ball Include Libraries
+// can automatically launch a foam ball.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
+
+// Include Libraries
 #include <Servo.h>
 
 // Pin Definitions

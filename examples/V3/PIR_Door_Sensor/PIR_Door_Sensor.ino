@@ -1,6 +1,10 @@
 // This project aims to educate the user on how to connect use a PIR sensor and
-// a Piezzo buzzer to detect a person and play a song when they're detected Pin
-// Definitions
+// a Piezzo buzzer to detect a person and play a song when they're detected.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
+
+// Pin Definitions
 int PIRPin = 2;
 int buzzerPin = 5;
 
