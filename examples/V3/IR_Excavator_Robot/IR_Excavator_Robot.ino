@@ -28,6 +28,9 @@ int motorDelay = 70;
 
 void setup() {
 	shield.begin();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 
 	// Begin serial communications and IR Reception
 	Serial.begin(9600);

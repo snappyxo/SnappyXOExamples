@@ -21,6 +21,9 @@ int randint;
 
 void setup() {
 	shield.begin();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 
 	// Declare pinModes
 	pinMode(PIN_LED_GREEN, OUTPUT);

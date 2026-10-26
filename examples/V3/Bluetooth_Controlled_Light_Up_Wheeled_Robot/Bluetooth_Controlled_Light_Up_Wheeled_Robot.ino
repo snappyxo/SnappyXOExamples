@@ -63,6 +63,9 @@ void setup() {
 	pinMode(PIN_LED_RED, OUTPUT);
 	pinMode(PIN_LED_BLUE, OUTPUT);
 	shield.begin();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 	shield.setTurnSpeed(60);  // how hard the robot turns, 0-100 percent: lower makes steering gentler
 	manager.begin("My BLE Module");
 }

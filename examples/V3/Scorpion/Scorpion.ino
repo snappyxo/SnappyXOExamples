@@ -58,8 +58,9 @@ void setup() {
 	armR.attach(A1);
 
 	shield.begin();
-	// This robot's left motor runs backward unless it's reversed here
-	shield.invertLeft();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 
 	// Reset Catapult to start position
 	armR.write(10);

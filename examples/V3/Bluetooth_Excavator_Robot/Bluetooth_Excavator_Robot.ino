@@ -18,6 +18,9 @@ int angle;
 
 void setup() {
 	shield.begin();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 	shield.setTurnSpeed(60);  // how hard the robot turns, 0-100 percent: lower makes steering gentler
 	arm.attach(A0);
 	sweeper.attach(A1);

@@ -16,6 +16,9 @@ void setup() {
 	pinMode(PIN_LED_RED, OUTPUT);
 
 	shield.begin();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 	// Begin serial communication
 	Serial.begin(9600);
 }

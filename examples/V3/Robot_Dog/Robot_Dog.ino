@@ -24,7 +24,9 @@ void setup() {
 	pinMode(echo, INPUT);
 
 	shield.begin();
-	shield.invertLeft();
+	// If a motor turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left motor
+	// shield.invertRight();  // right motor
 }
 
 void loop() {

@@ -10,6 +10,9 @@ SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the
 void setup() {
 	// Initialize motors
 	shield.begin();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 
 	// Begin serial communication
 	Serial.begin(9600);

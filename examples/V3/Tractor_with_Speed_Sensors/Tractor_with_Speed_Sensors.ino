@@ -160,8 +160,9 @@ void setup() {
 
 	// Initialize motor driver
 	shield.begin();
-	// This robot's left motor runs backward unless it's reversed here
-	shield.invertLeft();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 
 	// Attach interrupts to the pins connected to encoders
 	attachInterrupt(digitalPinToInterrupt(leftEncoder), leftPulseAdd, FALLING);

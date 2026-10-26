@@ -8,7 +8,12 @@
 SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
 
 // This setup section will be executed once
-void setup() { shield.begin(); }
+void setup() {
+	shield.begin();
+	// If a motor turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left motor
+	// shield.invertRight();  // right motor
+}
 
 // This is the main loop the code will follow
 void loop() { shield.forward(); }

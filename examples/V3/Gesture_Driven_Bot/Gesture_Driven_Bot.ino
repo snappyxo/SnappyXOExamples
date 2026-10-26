@@ -17,8 +17,9 @@ void setup() {
 	Serial.begin(9600);
 
 	shield.begin();
-	// This robot's right motor runs backward unless it's reversed here
-	shield.invertRight();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 	pinMode(trig, OUTPUT);
 	pinMode(echo, INPUT);
 }

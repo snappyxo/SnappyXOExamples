@@ -29,7 +29,9 @@ void setup() {
 
 	// Inital motor settings
 	shield.begin();
-	shield.invertRight();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 }
 
 void loop() {
