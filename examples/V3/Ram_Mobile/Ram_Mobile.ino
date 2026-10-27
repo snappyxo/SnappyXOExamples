@@ -1,7 +1,14 @@
 // This project aims to educate the user on how to control a 2WD car using IR as
-// well as operating a passive ball dropping mechanism. Include libraries
-#include <IRremote.h>
+// well as operating a passive ball dropping mechanism.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
+
+// Include libraries
+#include <IRremote.hpp>
 #include <SnappyXOShield.h>
+
+SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
 
 void setup() {
 	delay(500);
@@ -9,8 +16,10 @@ void setup() {
 	// Begin serial communication with computer.
 	Serial.begin(9600);
 
-	// Initialize motors (left inverted to match original forward direction)
-	initMotors(true, false);
+	shield.begin();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 
 	// initialize ir receiver pin
 	IrReceiver.begin(2, DISABLE_LED_FEEDBACK);
@@ -24,39 +33,39 @@ void setup() {
 // Configures the motor controller to stop the motors.
 void Brake() {
 	Serial.println("Stop");
-	pause();
+	shield.stop();
 }
 
 // Configures the motor controller to have the robot move forward.
 void Forward() {
 	Serial.println("Forward");
-	forward();
+	shield.forward();
 	delay(150);
-	pause();
+	shield.stop();
 }
 
 // Configures the motor controller to have the robot move backwards.
 void Reverse() {
 	Serial.println("Reverse");
-	reverse();
+	shield.reverse();
 	delay(150);
-	pause();
+	shield.stop();
 }
 
 /* TURN RIGHT */
 void Right() {
-	Serial.println("Left");
-	turnRight();
+	Serial.println("Right");
+	shield.spinRight();
 	delay(150);
-	pause();
+	shield.stop();
 }
 
 /* TURN LEFT */
 void Left() {
-	Serial.println("Turn Right");
-	turnLeft();
+	Serial.println("Left");
+	shield.spinLeft();
 	delay(150);
-	pause();
+	shield.stop();
 }
 
 // Main loop which detects users inputs and responds based on which button is

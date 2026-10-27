@@ -1,6 +1,11 @@
 // This project uses the photoresistor to steer a car in the direction of
 // greatest light.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <SnappyXOShield.h>
+
+SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
 
 // Pin Definitions
 int photoLeft = A1;
@@ -23,7 +28,10 @@ void setup() {
 	Serial.begin(9600);
 
 	// Inital motor settings
-	initMotors(false, true);
+	shield.begin();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 }
 
 void loop() {
@@ -37,10 +45,10 @@ void loop() {
 	Serial.println(V_Right);
 
 	if (V_Left > V_Right && lightDifference > minLightDiff) {
-		turnLeft();
+		shield.spinLeft();
 	} else if (V_Left < V_Right && lightDifference > minLightDiff) {
-		turnRight();
+		shield.spinRight();
 	} else {
-		forward();
+		shield.forward();
 	}
 }

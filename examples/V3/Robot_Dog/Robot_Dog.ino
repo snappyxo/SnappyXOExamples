@@ -1,6 +1,11 @@
 // This project aims to educate the user on how two motors can generate the
 // motion needed to create a robot dog
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <SnappyXOShield.h>
+
+SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
 
 // Pin Definitions
 const int trig = A0;
@@ -18,7 +23,10 @@ void setup() {
 	}
 	pinMode(echo, INPUT);
 
-	initMotors(true, false);
+	shield.begin();
+	// If a motor turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left motor
+	// shield.invertRight();  // right motor
 }
 
 void loop() {
@@ -35,10 +43,10 @@ void loop() {
 	distance = microsecondsToInches(duration);
 
 	if (distance > 3) {
-		forward(255);
+		shield.forward(255);
 	} else {
 		Serial.println("Object Detected");
-		pause();
+		shield.stop();
 		delay(200);
 	}
 }

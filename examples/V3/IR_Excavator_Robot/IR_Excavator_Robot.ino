@@ -1,9 +1,16 @@
 // This project aims to educate the user on how two servos can pick up and move
-// a foam ball Include Libraries
+// a foam ball.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
+
+// Include Libraries
 #include <Servo.h>
 #include <SnappyXOShield.h>
 
 #include <IRremote.hpp>
+
+SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
 
 // Pin Definitions
 int IRPin = 2;
@@ -20,7 +27,10 @@ int angle = 0;
 int motorDelay = 70;
 
 void setup() {
-	initMotors();
+	shield.begin();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 
 	// Begin serial communications and IR Reception
 	Serial.begin(9600);
@@ -30,15 +40,13 @@ void setup() {
 	servo1.attach(servo1Pin);
 	servo2.attach(servo2Pin);
 
-	// Initialize motor speeds
-	forward();
 	servo1.write(angle);
 	servo2.write(angle1);
 }
 
 void loop() {
 	if (IrReceiver.decode()) {
-		IrReceiver.start();
+		IrReceiver.resume();  // ready for the next button press
 
 		if (IrReceiver.decodedIRData.command == 0x45) {
 			servoUp();
@@ -83,35 +91,30 @@ void loop() {
 
 void motorSetForward() {
 	Serial.println("Forward");
-	forward();
+	shield.forward();
 	delay(motorDelay);
-	pause();
-
-	// Do not write the motor speeds on this function. It simply configures the
-	// motor controller.
+	shield.stop();
 }
 
 void motorSetBackward() {
 	Serial.println("Reverse");
-	reverse();
+	shield.reverse();
 	delay(motorDelay);
-	pause();
-	// Do not write the motor speeds on this function. It simply configures the
-	// motor controller.
+	shield.stop();
 }
 
 void TurnLeft() {
 	Serial.println("Left");
-	turnLeft();
+	shield.spinLeft();
 	delay(motorDelay);
-	pause();
+	shield.stop();
 }
 
 void TurnRight() {
 	Serial.println("Right");
-	turnRight();
+	shield.spinRight();
 	delay(motorDelay);
-	pause();
+	shield.stop();
 }
 
 void servoUp() {

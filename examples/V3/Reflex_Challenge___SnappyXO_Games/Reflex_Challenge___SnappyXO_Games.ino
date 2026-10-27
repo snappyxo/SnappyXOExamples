@@ -1,6 +1,11 @@
 // This code aims to educate the user on how to use various sensors through an
 // interactive game. User inputs affect the readings of each sensor and push the
-// user to test their reaction time. Pin Definitions
+// user to test their reaction time.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
+
+// Pin Definitions
 int buzzerPin = 6;
 int photoLEDPin = 7;
 int switchLEDPin = 8;

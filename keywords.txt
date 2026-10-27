@@ -1,15 +1,6 @@
-#######################################
-# Syntax Coloring Map for SnappyXOExamples
-#######################################
-
-#######################################
-# Datatypes (KEYWORD1)
-#######################################
-
-#######################################
-# Methods and Functions (KEYWORD2)
-#######################################
-
-#######################################
-# Constants (LITERAL1)
-#######################################
+# Syntax highlighting for SnappyXOExamples
+# See: https://arduino.github.io/arduino-cli/latest/library-specification/#keywords
+#
+# This library only has example sketches, so it adds no keywords of its own.
+# The names the sketches use, such as SnappyXOShield and MicroBlueManager, are
+# in the SnappyXOShield and MicroBlue libraries' keywords.txt.

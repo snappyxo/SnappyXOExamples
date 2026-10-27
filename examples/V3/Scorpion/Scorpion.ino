@@ -1,8 +1,14 @@
 // This project aims to educate the user on how to control a 2WD car using an
 // Ultrasonic Sensor as well as an catapult mechanism using finite servos.
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
+
 // Include libraries
 #include <Servo.h>
 #include <SnappyXOShield.h>
+
+SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
 
 // Initialize servo objects
 Servo armR;
@@ -23,19 +29,19 @@ void CATAPULT() {
 }
 
 // Configures the motor controller to stop the motors.
-void PAUSE() { pause(); }
+void PAUSE() { shield.stop(); }
 
 // Configures the motor controller to have the robot move forward.
-void FORWARD() { forward(); }
+void FORWARD() { shield.forward(); }
 
 // Configures the motor controller to have the robot move backwards.
-void REVERSE() { reverse(); }
+void REVERSE() { shield.reverse(); }
 
 /* TURN LEFT */
-void TURN_LEFT() { turnLeft(); }
+void TURN_LEFT() { shield.spinLeft(); }
 
 /* TURN RIGHT */
-void TURN_RIGHT() { turnRight(); }
+void TURN_RIGHT() { shield.spinRight(); }
 
 // Functions to convert ultrasonic reading to a distance
 long microsecondsToInches(long microseconds) { return microseconds / 74 / 2; }
@@ -51,8 +57,10 @@ void setup() {
 	armL.attach(A0);
 	armR.attach(A1);
 
-	// Initialize motor driver (left motor inverted to match original wiring)
-	initMotors(true, false, false);
+	shield.begin();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 
 	// Reset Catapult to start position
 	armR.write(10);
@@ -83,7 +91,7 @@ void loop() {
 	delay(10);
 
 	/* check for distance from object and random integer to do the following:
-	   reverse -> pause -> trigger catapult -> turn left/right based on randint
+	   reverse -> stop -> trigger catapult -> turn left/right based on randint
 	   -> go forward -> restart loop
 	*/
 	if ((cm < 18) && (randint == 0)) {

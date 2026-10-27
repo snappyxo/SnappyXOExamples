@@ -1,12 +1,22 @@
 # SnappyXOExamples
 
-Example sketches for SnappyXO V3 robotics kits.
+Example sketches for SnappyXO V3 robotics kits. The version follows the kit: 3.x is for the V3 kits.
 
 ## Installation
 
 Install via the Arduino Library Manager (search for **SnappyXOExamples**) or download and place the folder in your Arduino `libraries/` directory.
 
-This library requires the **SnappyXOShield** library to be installed as well.
+The Library Manager also installs the libraries the sketches use: **SnappyXOShield** 1.0 or later, **MicroBlue** 2.1 or later, **Servo** and **IRremote**. If you install by hand, install those too.
+
+## What you need
+
+- **Board:** Arduino UNO R4 WiFi
+- **Shield:** SnappyXO Motor Shield v3. Each sketch starts with `SnappyXOShield shield(SnappyXOShield::V3);`
+- **Bluetooth sketches:** the MicroBlue app 2.0 or later, which sends a heartbeat (Settings > Send heartbeat, on by default). The robot stops when the phone disconnects or the heartbeat stops.
+
+## Upgrading from 3.0.0
+
+Version 3.1.0 uses SnappyXOShield 1.0, where the motor functions moved into the `SnappyXOShield` class (`shield.forward()` instead of `forward()`). The 3.0.0 sketches don't compile with SnappyXOShield 1.0. Update both libraries together. To keep using sketches you wrote for 3.0.0, follow SnappyXOShield's ["Upgrading from 0.x"](https://github.com/snappyxo/SnappyXOShield#upgrading-from-0x) table, or install SnappyXOShield 0.2.1 from the Library Manager.
 
 ## Examples
 
@@ -43,3 +53,7 @@ Available V3 examples:
 - [Wheeled_Robot_with_4_Bar_Lift](examples/V3/Wheeled_Robot_with_4_Bar_Lift/Wheeled_Robot_with_4_Bar_Lift.ino)
 - [Wheeled_Robot_with_4_Bar_Sweeper](examples/V3/Wheeled_Robot_with_4_Bar_Sweeper/Wheeled_Robot_with_4_Bar_Sweeper.ino)
 - [Wheeled_Sweeper_Robot](examples/V3/Wheeled_Sweeper_Robot/Wheeled_Sweeper_Robot.ino)
+
+## License
+
+MIT License — Copyright (c) 2024-2026 A+ Mobile Solutions Inc. See [LICENSE](LICENSE) for details.

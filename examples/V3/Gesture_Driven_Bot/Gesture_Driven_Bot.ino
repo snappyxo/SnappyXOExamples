@@ -1,6 +1,11 @@
 // This project aims to educate the user on how an ultrasonic sensor can detect
 // different heights to drive a robot foward and backward
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 #include <SnappyXOShield.h>
+
+SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
 
 // Pin Declarations
 
@@ -11,9 +16,10 @@ void setup() {
 	// initialize serial communication:
 	Serial.begin(9600);
 
-	// invertR=true matches original forward direction (InputOne HIGH, InputTwo
-	// LOW)
-	initMotors(false, true, false);
+	shield.begin();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 	pinMode(trig, OUTPUT);
 	pinMode(echo, INPUT);
 }
@@ -51,17 +57,17 @@ void loop() {
 
 		if (cm < 15) {
 			Serial.println("Reverse");
-			reverse();
+			shield.reverse();
 		}
 
 		else if (cm < 30 && cm > 16) {
 			Serial.println("Forward.");
-			forward();
+			shield.forward();
 		}
 
 		else {
 			Serial.println("Pause");
-			pause();
+			shield.stop();
 		}
 	}
 }

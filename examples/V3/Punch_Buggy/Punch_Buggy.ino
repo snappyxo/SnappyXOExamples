@@ -1,9 +1,14 @@
 // This project aims to educate the user on how to control a 2WD car using an
 // Ultrasonic Sensor as well as an "punching" mechanism using finite servos.
-// Include libraries
+//
+// Developed by A+ Mobile Solutions Inc
+// Licensed under the MIT License. See LICENSE for details.
 
+// Include libraries
 #include <Servo.h>
 #include <SnappyXOShield.h>
+
+SnappyXOShield shield(SnappyXOShield::V3);  // the shield version printed on the board: V3 or V2
 
 // Pin Declarations
 
@@ -16,19 +21,19 @@ Servo armTOP;
 Servo armBOTTOM;
 
 // Function to stop motor movement
-void PAUSE() { pause(); }
+void PAUSE() { shield.stop(); }
 
 // Function to move forward
-void FORWARD() { forward(); }
+void FORWARD() { shield.forward(); }
 
 // Function to move in reverse
-void REVERSE() { reverse(); }
+void REVERSE() { shield.reverse(); }
 
 // Function to turn left
-void TURN_LEFT() { turnLeft(); }
+void TURN_LEFT() { shield.spinLeft(); }
 
 // Function to turn right
-void TURN_RIGHT() { turnRight(); }
+void TURN_RIGHT() { shield.spinRight(); }
 
 // Functions to convert ultrasonic readings to distance
 long microsecondsToInches(long microseconds) { return microseconds / 74 / 2; }
@@ -46,8 +51,10 @@ void setup() {
 	armTOP.write(179);
 	armBOTTOM.write(0);
 
-	// Initialize motors (invertL=true to match original wiring polarity)
-	initMotors(true, false);
+	shield.begin();
+	// If a wheel turns backward when it should go forward, uncomment its line:
+	// shield.invertLeft();   // left wheel
+	// shield.invertRight();  // right wheel
 }
 
 void loop() {
