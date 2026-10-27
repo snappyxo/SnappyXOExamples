@@ -16,10 +16,9 @@ jobs:
           fqbn: arduino:renesas_uno:unor4wifi
           platforms: |
             - name: arduino:renesas_uno
-          # SnappyXOShield comes from its repository's main branch until 1.0.0
-          # is in the Library Manager; then it can be "- name: SnappyXOShield"
           libraries: |
             - source-url: https://github.com/snappyxo/SnappyXOShield.git
+              version: 0.3.0
             - name: MicroBlue
             - name: ArduinoBLE
             - name: Servo
