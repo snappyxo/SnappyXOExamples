@@ -6,7 +6,7 @@ Example sketches for SnappyXO V3 robotics kits. The version follows the kit: 3.x
 
 Install via the Arduino Library Manager (search for **SnappyXOExamples**) or download and place the folder in your Arduino `libraries/` directory.
 
-The Library Manager also installs the libraries the sketches use: **SnappyXOShield** 1.0 or later, **MicroBlue** 2.1 or later, **Servo** and **IRremote**. If you install by hand, install those too.
+The Library Manager also installs the libraries the sketches use: **SnappyXOShield** 0.3.0 or later, **MicroBlue** 2.1 or later, **Servo** and **IRremote**. If you install by hand, install those too.
 
 ## What you need
 
@@ -16,7 +16,7 @@ The Library Manager also installs the libraries the sketches use: **SnappyXOShie
 
 ## Upgrading from 3.0.0
 
-Version 3.1.0 uses SnappyXOShield 1.0, where the motor functions moved into the `SnappyXOShield` class (`shield.forward()` instead of `forward()`). The 3.0.0 sketches don't compile with SnappyXOShield 1.0. Update both libraries together. To keep using sketches you wrote for 3.0.0, follow SnappyXOShield's ["Upgrading from 0.x"](https://github.com/snappyxo/SnappyXOShield#upgrading-from-0x) table, or install SnappyXOShield 0.2.1 from the Library Manager.
+Version 3.1.0 uses SnappyXOShield 0.3.0, where the motor functions moved into the `SnappyXOShield` class (`shield.forward()` instead of `forward()`). The 3.0.0 sketches don't compile with SnappyXOShield 0.3.0. Update both libraries together. To keep using sketches you wrote for 3.0.0, follow SnappyXOShield's ["Upgrading from 0.2.x"](https://github.com/snappyxo/SnappyXOShield#upgrading-from-02x) table, or install SnappyXOShield 0.2.1 from the Library Manager.
 
 ## Examples
 
