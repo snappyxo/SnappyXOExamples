@@ -1,3 +1,7 @@
+// Library installation: 
+// Arduino IDE: Sketch > Include Library > Manage Library.
+// Search for SnappyXOShield
+// Source: https://github.com/snappyxo/SnappyXOShield
 // This project uses the photoresistor to steer a car in the direction of
 // greatest light.
 //

@@ -1,3 +1,7 @@
+// Library installation: 
+// Arduino IDE: Sketch > Include Library > Manage Library.
+// Search for SnappyXOShield
+// Source: https://github.com/snappyxo/SnappyXOShield
 // This project aims to educate the user on how to connect the motors of a 2WD
 // car and program it through Arduino.
 //

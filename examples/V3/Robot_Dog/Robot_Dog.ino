@@ -1,3 +1,7 @@
+// Library installation: 
+// Arduino IDE: Sketch > Include Library > Manage Library.
+// Search for SnappyXOShield
+// Source: https://github.com/snappyxo/SnappyXOShield
 // This project aims to educate the user on how two motors can generate the
 // motion needed to create a robot dog
 //

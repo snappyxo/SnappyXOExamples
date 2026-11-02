@@ -1,3 +1,7 @@
+// Library installation: 
+// Arduino IDE: Sketch > Include Library > Manage Library.
+// Search for SnappyXOShield
+// Source: https://github.com/snappyxo/SnappyXOShield
 // This code lights up two LEDs while a two wheel drive robot car moves.
 //
 // Developed by A+ Mobile Solutions Inc

@@ -1,3 +1,7 @@
+// Library installation: 
+// Arduino IDE: Sketch > Include Library > Manage Library.
+// Search for SnappyXOShield
+// Source: https://github.com/snappyxo/SnappyXOShield
 // This project aims to educate the user on how to control a differential drive
 // robot with two DC motors and induce a sweeping motion with a 4 bar mechanism
 // and finite servo.

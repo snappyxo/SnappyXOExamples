@@ -1,3 +1,7 @@
+// Library installation: 
+// Arduino IDE: Sketch > Include Library > Manage Library.
+// Search for SnappyXOShield
+// Source: https://github.com/snappyxo/SnappyXOShield
 // This project aims to educate the user on how an ultrasonic sensor can detect
 // different heights to drive a robot foward and backward
 //

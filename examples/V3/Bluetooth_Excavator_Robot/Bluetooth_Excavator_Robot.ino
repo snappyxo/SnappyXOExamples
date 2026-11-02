@@ -1,3 +1,7 @@
+// Library installation: 
+// Arduino IDE: Sketch > Include Library > Manage Library.
+// Search for SnappyXOShield
+// Source: https://github.com/snappyxo/SnappyXOShield
 // This project aims to educate the user on how to control a 2WD car using
 // bluetooth as well as an excavator mechanism using finite servos.
 //

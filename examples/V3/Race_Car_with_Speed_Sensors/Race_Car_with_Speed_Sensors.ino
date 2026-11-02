@@ -1,3 +1,7 @@
+// Library installation: 
+// Arduino IDE: Sketch > Include Library > Manage Library.
+// Search for SnappyXOShield
+// Source: https://github.com/snappyxo/SnappyXOShield
 // Shape-Drawing Encoder Bot: this project aims to create a dual-motor driven
 // wheeled robot that uses the encoders to gauge the robot's distance, allowing
 // shape paths to be defined.

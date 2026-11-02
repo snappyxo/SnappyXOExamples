@@ -1,3 +1,7 @@
+// Library installation: 
+// Arduino IDE: Sketch > Include Library > Manage Library.
+// Search for SnappyXOShield
+// Source: https://github.com/snappyxo/SnappyXOShield
 // This code controls a car with a steering mechanism via IR Remote. You can
 // control the speed and steer angle of the car.
 //

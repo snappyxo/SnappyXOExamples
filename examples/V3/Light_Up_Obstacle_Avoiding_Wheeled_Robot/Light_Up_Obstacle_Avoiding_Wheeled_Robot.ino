@@ -1,3 +1,7 @@
+// Library installation: 
+// Arduino IDE: Sketch > Include Library > Manage Library.
+// Search for SnappyXOShield
+// Source: https://github.com/snappyxo/SnappyXOShield
 // This code allows the 2WD DC motor car to avoid obstacles using an Ultrsonic
 // sensor and lights up an LED that changes color based on the direction that
 // the car is moving
